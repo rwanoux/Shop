@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+<div class="card red">
+    {{ form_errors(form) }}
+</div>
+
+<div class=" container p-4">
+    {{ form_row(form.name, {'attr':{'class': 'form-field'} }) }}
+    {{ form_row(form.img, {'attr':{'class': 'form-field'} }) }}
+    {{ form_row(form.price, {'attr':{'class': 'form-field'} }) }}
+    {{ form_row(form.categorie, {'attr':{'class': 'form-field'} }) }}
+
+</div>
+
+
+
+
+<button class="btn viride align-self-center">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}

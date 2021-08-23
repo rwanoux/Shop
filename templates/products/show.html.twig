@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products{% endblock %}
+
+{% block body %}
+<h1>Products</h1>
+
+<div class="card shadow-2 m-4 hoverable-2">
+    <div class="card-header">{{ product.id }} - {{ product.name }}</div>
+    <div class="card-image"><img src="{{ product.img }}" alt="" width:"auto"height="125"></div>
+    <div class="txt-right">{{ product.price }}</div>
+    <div class="card-content">
+        <button class=" btn shadow-1 rounded-1 blue">
+            <a href="{{ path('products_show', {'id': product.id}) }}"> <i class="fas fa-binoculars"></i></a>
+        </button>
+        <button class=" btn shadow-1 rounded-1 yellow dark-1">
+            <a href="{{ path('products_edit', {'id': product.id}) }}"><i class="fas fa-edit"></i></a>
+        </button>
+    </div>
+</div>
+
+<a href="{{ path('products_index') }}">back to list</a>
+
+<a href="{{ path('products_edit', {'id': product.id}) }}">edit</a>
+
+{{ include('products/_delete_form.html.twig') }}
+{% endblock %}

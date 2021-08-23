@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories index{% endblock %}
+
+{% block body %}
+<h1>nos catégories</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Icone</th>
+            <th>actions</th>
+            <th>produits associés</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+        <tr>
+            <td><a href="{{path('products_byCat', {'catId':category.id})}}">{{ category.id }}</a></td>
+            <td><a href="{{path('products_byCat', {'catId':category.id})}}">{{ category.name }}</a></td>
+            <td><i class="{{ category.icone }}"></i></td>
+            <td>
+                <a href="{{ path('categories_show', {'id': category.id}) }}">show</a>
+                <a href="{{ path('categories_edit', {'id': category.id}) }}">edit</a>
+            </td>
+            <td>
+                {% for product in category.products %}
+                <span class="viride px-3"><a
+                        href="{{path('products_show',{'id':product.id})}}">{{product.name}}</a></span>
+                {% endfor %}
+            </td>
+        </tr>
+
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+<button class=" btn shadow-1 rounded-1 viride">
+    <a href="{{ path('categories_new') }}">Create new <i class="fas fa-plus-circle"></i></a>
+</button>{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}accueil!{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+<div class="succes" role="alert">{{ message }}</div>
+{% endfor %}
+<div class="grix xs1 md3 lg5 m-4">
+    <div classe="col12 col-md6">
+        <h1 class="p-3 blue rounded-3">mon gimmick</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque unde, quaerat repellendus necessitatibus eum
+            praesentium temporibus accusantium atque nemo, consectetur eos. Sint ipsum debitis sunt suscipit, itaque
+            reprehenderit dicta. Odit!</p>
+    </div>
+    <div>
+        <img src="https://wpm.jestocke.com/uploads/sites/11/2020/02/AdobeStock_210990152-2-min-1-scaled.jpeg"
+            class="lightbox responsive-media" id="homePic" data-ax="lightbox" />
+    </div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea totam quidem quia, corporis repudiandae dolor,
+        eveniet accusantium voluptatem maxime dolores vitae eos repellendus ipsum, corrupti omnis consequuntur
+        praesentium consectetur laboriosam adipisci modi! Rerum obcaecati et maxime cupiditate asperiores facere commodi
+        corporis amet optio vero recusandae quibusdam, corrupti omnis inventore consectetur, suscipit, tempore iste aut
+        mollitia explicabo quaerat cumque reiciendis voluptate?</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed id, nesciunt ratione, expedita praesentium omnis
+        alias inventore quas exercitationem provident, dicta officia ex eaque velit perferendis magnam necessitatibus.
+        Repellat delectus voluptatem saepe? Non aliquid, modi impedit mollitia ut fuga sunt. Sed, numquam molestiae?
+        Repellendus, voluptates.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequatur saepe soluta quo natus ea nihil,
+        totam consequuntur cumque ullam hic reprehenderit neque aperiam asperiores quos accusantium excepturi. Saepe
+        nisi labore optio! Aliquam, cupiditate at maiores eaque iure dolorum blanditiis est excepturi voluptates
+        consequatur provident laboriosam vel nesciunt tenetur fuga modi doloremque voluptatibus voluptas suscipit animi
+        voluptatem enim! Omnis possimus exercitationem aperiam voluptatibus doloremque voluptatum assumenda nulla
+        deleniti ea ipsa et aut quasi, id illo delectus velit perferendis ut consequuntur? Quidem numquam delectus porro
+        commodi architecto praesentium vitae officiis, molestiae magni cum nobis temporibus veniam voluptate. Veniam
+        esse quibusdam vel harum! Excepturi quod optio modi obcaecati labore voluptatibus est, ad eius et? Tempora
+        architecto ex necessitatibus. Nisi quod officia aperiam sunt nam possimus ab! Labore, repellendus harum! Saepe
+        itaque architecto labore, laboriosam sit praesentium magnam ducimus asperiores accusantium autem nisi voluptatem
+        numquam! Ea consequuntur consectetur non laboriosam, natus maiores, voluptas fugit id officiis nam quidem, dicta
+        inventore eius in dignissimos. Enim omnis dolore consequuntur quaerat ratione voluptas eum repudiandae
+        perferendis id accusantium, corporis blanditiis, aliquid exercitationem? Est laborum fuga facilis maxime a
+        numquam, adipisci odio suscipit atque amet ut voluptatibus voluptatem commodi tempora reiciendis distinctio
+        recusandae earum iure ratione culpa?</div>
+</div>
+
+{% endblock %}

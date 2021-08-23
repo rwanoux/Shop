@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products index{% endblock %}
+
+{% block body %}
+<h1>Products index</h1>
+
+<section>
+
+    <div class="container grix sm2 md4">
+        {% for product in products %}
+        <div class="card shadow-2 m-4 hoverable-2">
+            <div class="card-header">{{ product.id }} - {{ product.name }}</div>
+            <div class="card-image lightbox" data-ax="lightbox" id="{{product.name}}"><img src="{{ product.img }}"
+                    alt="" width:"auto"height="125"></div>
+            <div class="txt-right">{{ product.price }}</div>
+            <div class="card-content">
+                <button class=" btn shadow-1 rounded-1 blue">
+                    <a href="{{ path('products_show', {'id': product.id}) }}"> <i class="fas fa-binoculars"></i></a>
+                </button>
+                <button class=" btn shadow-1 rounded-1 yellow dark-1">
+                    <a href="{{ path('products_edit', {'id': product.id}) }}"><i class="fas fa-edit"></i></a>
+                </button>
+            </div>
+        </div>
+        {% else %}
+        <div>
+            <div colspan="5">mais y'a rien ici !</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<button class=" btn shadow-1 rounded-1 viride">
+    <a href="{{ path('products_new') }}">Create new <i class="fas fa-plus-circle"></i></a>
+</button>
+{% endblock %}
